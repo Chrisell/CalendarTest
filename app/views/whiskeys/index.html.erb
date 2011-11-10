@@ -1,0 +1,31 @@
+<h1>Listing whiskeys</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Stocked</th>
+    <th>Cost</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @whiskeys.each do |whiskey| %>
+  <tr>
+    <td><%= whiskey.name %></td>
+    <td><%= whiskey.description %></td>
+    <td><%= whiskey.stocked %></td>
+    <td><%= whiskey.cost %></td>
+    <td><%= whiskey.price %></td>
+    <td><%= link_to 'Show', whiskey %></td>
+    <td><%= link_to 'Edit', edit_whiskey_path(whiskey) %></td>
+    <td><%= link_to 'Destroy', whiskey, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Whiskey', new_whiskey_path %>

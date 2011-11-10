@@ -1,0 +1,25 @@
+<h2>Menu<h2>
+	
+<h3>Drafts List</h3>
+<table>
+<% @drafts.each do |d| %>
+	<% if d.stocked? %>
+		<tr>
+			<td><%= d.name %></td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+<%= link_to "View All Drafts", drafts_path %>
+
+<h3>Whiskey List</h3>
+<table>
+<% @whiskeys.each do |d| %>
+	<% if d.stocked? %>
+		<tr>
+			<td><%= d.name %></td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+<%= link_to "View All Whiskeys", whiskeys_path %>

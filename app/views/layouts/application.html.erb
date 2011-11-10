@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CalendarTest</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div style="z-index: 5;" class="topbar-wrapper">
+	    <div data-dropdown="dropdown" class="topbar">
+	      <div class="topbar-inner">
+	        <div class="container">
+	          <h3><a href="/admin/">The Trestle Inn</a></h3>
+	          <ul class="nav">
+	            <li class="active"><a href="/admin/">Home</a></li>
+				<li><a href="/admin/events">Events</a></li>
+	            <li><a href="/admin/menu">Menu</a></li>
+	            <li class="dropdown">
+	              <a class="dropdown-toggle" href="#">Dropdown</a>
+	              <ul class="dropdown-menu">
+	                <li><a href="#">Secondary link</a></li>
+	                <li><a href="#">Something else here</a></li>
+	                <li class="divider"></li>
+	                <li><a href="#">Another link</a></li>
+	              </ul>
+	            </li>
+	          </ul>
+	        </div>
+	      </div><!-- /topbar-inner -->
+	    </div><!-- /topbar -->
+	  </div>
+	<div class="row">
+		<div class="span16">	
+			<%= yield %>
+		</div>
+	</div>
+</body>
+</html>

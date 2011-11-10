@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  starttime: 2011-11-09 14:26:23
+  endtime: 2011-11-09 14:26:23
+  all_day: false
+  description: MyText
+  event_series_id: 1
+
+two:
+  title: MyString
+  starttime: 2011-11-09 14:26:23
+  endtime: 2011-11-09 14:26:23
+  all_day: false
+  description: MyText
+  event_series_id: 1

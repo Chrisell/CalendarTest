@@ -1,0 +1,37 @@
+
+<h2>Upcoming Events</h2>
+<table id="upcoming_events_table">
+	<tr>
+		<th>Event Title</th>
+		<th>Start Time</th>
+		<th>&nbsp;</th>
+	</tr>
+<% @events.each do |e|%>
+	<tr>
+		<td><%= e.title %></td>
+		<td><%= e.start.strftime("%m/%d/%Y at %I:%M%p") %></td>
+		<td><%= link_to "show", e, :class => 'btn info'%></td>
+	</tr>	
+<% end %>
+</table>
+
+<h2>Currently Stocked Drafts</h2>
+<table id="drafts">
+	<th>Draft Name</th>
+	<th>Price</th>
+	<th>Cost</th>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+<% @drafts.each do |e|%>
+	<% if e.stocked? %>
+		<tr>
+			<td><%= e.name %></td>
+			<td><%= e.price %></td>
+			<td><%= e.cost %></td>
+			<td><%= link_to "show", e, :class => 'btn info'%></td>
+			<td><%= link_to "edit", edit_draft_path(e), :class => 'btn info'%></td>
+		</tr>
+	<% end %>	
+<% end %>
+</table>
+<%= link_to "view all drafts", drafts_path %>

@@ -1,0 +1,65 @@
+
+<script type="text/javascript" charset="utf-8">
+	$(document).ready(function(){
+
+		$("#calendar").fullCalendar({
+			editable: true,
+			events: "events.json",
+			editable:false,
+			disableDragging: true,
+			eventClick: function(event, jsEvent, view){
+	              showEventDetails(event);
+	          },
+		});
+	});
+</script>
+<h1>Listing events</h1>
+
+<table class="outlined">
+  <tr>
+    <th>Title</th>
+    <th>Starttime</th>
+    <th>Endtime</th>
+    <th>All day</th>
+    <th>Description</th>
+    <th>Event series</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @events.each do |event| %>
+  <tr>
+    <td><%= event.title %></td>
+    <td><%= event.start.strftime("%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= event.end.strftime("%m/%d/%Y at %I:%M%p") %></td>
+    <td><%= event.all_day %></td>
+    <td><%= event.description %></td>
+    <td><%= event.event_series_id %></td>
+    <td><%= link_to 'Show', event, :class => "btn info" %></td>
+    <td><%= link_to 'Edit', edit_event_path(event), :class => "btn info"  %></td>
+    <td><%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete, :class => "btn danger"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event', new_event_path, :class => "btn success" %>
+<div id="calendar"></div>
+<div id = "desc_dialog" style ="display:none;">
+  <div id = "event_desc">
+
+  </div>
+  <br/>
+  <br/>
+  <div id = "event_actions">
+    <span id = "edit_event"></span>
+    <span id = "delete_event"></span>
+  </div>
+</div>
+<div id = "create_event_dialog" style ="display:none;">
+  <div id = "create_event">
+
+  </div>
+</div>

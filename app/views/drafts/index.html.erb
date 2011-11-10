@@ -1,0 +1,31 @@
+<h1>Listing drafts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Stocked</th>
+    <th>Cost</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @drafts.each do |draft| %>
+  <tr>
+    <td><%= draft.name %></td>
+    <td><%= draft.description %></td>
+    <td><%= draft.stocked %></td>
+    <td><%= draft.cost %></td>
+    <td><%= draft.price %></td>
+    <td><%= link_to 'Show', draft, :class => 'btn info' %></td>
+    <td><%= link_to 'Edit', edit_draft_path(draft), :class => 'btn info' %></td>
+    <td><%= link_to 'Destroy', draft, confirm: 'Are you sure?', method: :delete, :class => 'btn danger' %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Draft', new_draft_path %>

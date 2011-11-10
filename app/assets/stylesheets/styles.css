@@ -1,0 +1,32 @@
+html {
+	padding:40px;
+}
+
+body{
+	width:940px;
+	margin:auto;
+}
+
+label {
+	margin-right:10px;
+}
+input, select {
+	width:auto;
+}
+
+.outlined th, .outlined td {
+	border:1px solid #DDDDDD;
+}
+
+#calendar {
+	margin-top:20px;
+}
+
+.topbar-wrapper {
+	margin-bottom:20px;
+}
+
+#event_description {
+	width:500px;
+	height:100px;
+}

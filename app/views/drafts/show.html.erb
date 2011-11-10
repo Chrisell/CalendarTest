@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @draft.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @draft.description %>
+</p>
+
+<p>
+  <b>Stocked:</b>
+  <%= @draft.stocked %>
+</p>
+
+<p>
+  <b>Cost:</b>
+  <%= @draft.cost %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @draft.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_draft_path(@draft) %> |
+<%= link_to 'Back', drafts_path %>
