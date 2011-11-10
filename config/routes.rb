@@ -28,13 +28,13 @@ CalendarTest::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
-  match 'admin/events' => 'events#index'
-  match 'admin/drafts' => 'drafts#index'
-  
-  match 'admin/menu' => 'menu#index'
-  match 'admin/menu/whiskeys' => 'menu#whiskeys'
-  match 'admin/menu/drafts' => 'menu#drafts'
-  match 'admin/' => 'admin#index'
+  # match 'admin/events' => 'events#index'
+  # match 'admin/drafts' => 'drafts#index'
+  # 
+  # match 'admin/menu' => 'menu#index'
+  # match 'admin/menu/whiskeys' => 'menu#whiskeys'
+  # match 'admin/menu/drafts' => 'menu#drafts'
+  # match 'admin/' => 'admin#index'
   match 'menu/' => 'menu#index'
 
   # Sample of named route:
