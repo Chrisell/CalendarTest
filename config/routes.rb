@@ -1,26 +1,32 @@
 CalendarTest::Application.routes.draw do 
 
+  
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  resources :whiskeys
-
-  get "menu/index"
-
-  get "menu/drafts"
-
-  get "menu/cans"
+  # 
+  # resources :whiskeys
+  # 
+  # resources :drafts
+  # 
+  # resources :events
   
-  get "menu/whiskeys"
+  # get "main/index"
+  # 
+  # get "menu/index"
+  # 
+  # get "menu/drafts"
+  # 
+  # get "menu/cans"
+  # 
+  # get "menu/whiskeys"
+  # 
+  # get "menu/cocktails"
+  # 
+  # get "menu/food"
 
-  get "menu/cocktails"
 
-  get "menu/food"
-
-  resources :drafts
-
-  resources :events
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -35,7 +41,7 @@ CalendarTest::Application.routes.draw do
   # match 'admin/menu/whiskeys' => 'menu#whiskeys'
   # match 'admin/menu/drafts' => 'menu#drafts'
   # match 'admin/' => 'admin#index'
-  match 'menu/' => 'menu#index'
+  # match 'menu/' => 'menu#index'
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
@@ -79,7 +85,7 @@ CalendarTest::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'main#index'
 
   # See how all your routes lay out with "rake routes"
 

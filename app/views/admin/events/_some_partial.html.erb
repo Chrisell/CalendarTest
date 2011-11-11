@@ -1,0 +1,9 @@
+<h3>HEY YOU GUYS</h3>
+<% @events = Event.all %>
+<table>
+	<% @events.each do |e| %>
+	<tr>
+		<td><%= e.title %></td>
+	</tr>
+	<% end %>		
+</table>		

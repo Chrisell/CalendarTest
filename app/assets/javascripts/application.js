@@ -8,6 +8,21 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+	$(document).ready(function(){
+
+		$("#calendar").fullCalendar({
+			editable: true,
+			events: "/admin/events.json",
+			editable:false,
+			disableDragging: true,
+			eventClick: function(event, jsEvent, view){
+	              showEventDetails(event);
+	          },
+		});
+	});
+
+
 function moveEvent(event, dayDelta, minuteDelta, allDay){
     jQuery.ajax({
         data: 'id=' + event.id + '&title=' + event.title + '&day_delta=' + dayDelta + '&minute_delta=' + minuteDelta + '&all_day=' + allDay,

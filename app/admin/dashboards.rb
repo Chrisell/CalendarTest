@@ -1,7 +1,7 @@
 ActiveAdmin::Dashboards.build do
   
-  ActiveAdmin.register Event, :as => "Events"
-  ActiveAdmin.register Draft, :as => "Drafts"
+  # ActiveAdmin.register Event, :as => "Events"
+  # ActiveAdmin.register Draft, :as => "Drafts"
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
@@ -9,13 +9,21 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-    section "Recent Posts" do
-        ul do
-          Event.all.each do |post|
-            li link_to(post.title, event_path(post))
-          end
+    section "Upcoming Events" , :priority => 1 do
+        div do
+          render 'upcoming_events'
         end
       end
+      
+    section "Current Menu stock", :priority => 2 do
+      table_for Draft.order('name desc').limit(10).where(:stocked => true).each do |d|
+        column("Drafts (#{Draft.where(:stocked =>true).count})") {|d| link_to(d.name, admin_draft_path(d)) }
+      end
+      table_for Whiskey.order('name desc').limit(10).each do |d|
+        column("Whiskey (#{Whiskey.where(:stocked =>true).count})") {|d| link_to(d.name, admin_whiskey_path(d)) }
+         
+      end
+    end
   
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can

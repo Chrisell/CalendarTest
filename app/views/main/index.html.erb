@@ -1,0 +1,54 @@
+<table>
+	<% @events.each do |e| %>
+	<tr>
+		<td><%= e.title %></td>
+	</tr>
+	<% end %>	
+</table>
+
+ 
+<ul class="pills">
+<li class="active"><a href="#home">Home</a></li>
+<li><a href="#profile">Profile</a></li>
+<li><a href="#messages">Messages</a></li>
+<li><a href="#settings">Settings</a></li>
+</ul>
+
+<div class="pill-content">
+	<div class="active" id="home">
+		<ul>
+		<% Draft.all.each do |d|%>
+			<li><%= d.name %></li>
+		<% end %>
+		</ul>
+	</div>
+	<div id="profile">
+		<ul>
+		<% Draft.all.each do |d|%>
+			<li><%= d.name %></li>
+		<% end %>
+		</ul>
+	</div>
+	<div id="messages">
+		<ul>
+		<% Draft.all.each do |d|%>
+			<li><%= d.name %></li>
+		<% end %>
+		</ul>
+	</div>
+	<div id="settings">
+	<ul>
+	<% Draft.all.each do |d|%>
+		<li><%= d.name %></li>
+	<% end %>
+	</ul>
+</div>
+</div>
+
+<div id="calendar"></div>
+
+<script>
+$(function () {
+$('.pill-content').pills()
+})
+</script>

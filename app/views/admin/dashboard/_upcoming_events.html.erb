@@ -1,0 +1,17 @@
+<% @events = Event.all %>
+<table>
+	<tr>
+		<th>Event Name</th>
+		<th>Event Date</th>
+		<th></th>
+<% @events.each do |e| %>
+	<% if e.start > Date.today %>
+	<tr>
+		<td><%= e.title %></td>
+		<td><%= e.start.strftime("%a, %B %d at %l %P to ") + e.end.strftime("%l %P") %></td>
+		<td><%= link_to "edit", admin_event_path(e)%></td>
+	</tr>
+	<% end %>
+<% end %>
+</table>
+<%= link_to "View All Events" , admin_events_path %>
